@@ -1,0 +1,9 @@
+// VerilogA for ADC_learn, L2_comparator_ideal, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module L2_comparator_ideal;
+
+
+endmodule

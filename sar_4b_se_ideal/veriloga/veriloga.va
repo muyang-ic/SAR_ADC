@@ -1,0 +1,118 @@
+`include "constants.vams"
+`include "disciplines.vams"
+
+// ADC
+`define NUM_ADC_BITS 4
+
+module sar_4b_se_ideal(
+    input  electrical VIN,                         // 
+    input  electrical CLKS,                        // 
+    output electrical [`NUM_ADC_BITS:1] VOUT       // 
+);
+
+    parameter real vdd = 1;                        // 
+
+    real vsampled;                                 // 
+    real vth_cmp;                                  // 
+
+    // bit01
+    integer dout [`NUM_ADC_BITS:1];
+
+    genvar i;
+
+    analog begin
+
+        //========================================================
+        // 1. 
+        //========================================================
+        // initial_step
+        // cross(...,+1)CLKSvdd/2
+        //
+        // 
+        // ADC
+        @(initial_step or cross(V(CLKS) - vdd/2, +1)) begin
+            $strobe("[reset]");
+
+            for (i = `NUM_ADC_BITS; i >= 1; i = i - 1) begin
+                dout[i] = 0;
+            end
+        end
+
+
+        //========================================================
+        // 2. /
+        //========================================================
+        // CLKSvsampledVIN
+        //
+        // CLKS
+        // vsampledS/H
+        if (V(CLKS) > vdd/2) begin
+            vsampled = V(VIN);
+        end
+
+
+        //========================================================
+        // 3. 
+        //========================================================
+        // cross(...,-1)CLKSvdd/2
+        //
+        // 
+        // 1. 
+        // 2. SAR
+        @(cross(V(CLKS) - vdd/2, -1)) begin
+
+            // 
+            vth_cmp = vdd / 2;
+
+            // MSBbit
+            for (i = 1; i <= `NUM_ADC_BITS; i = i + 1) begin
+
+                $strobe(
+                    "[step=%0d] vsampled = %0.4f, comparison threshold = %0.4f",
+                    i, vsampled, vth_cmp
+                );
+
+                if (vsampled > vth_cmp) begin
+
+                    // 
+                    // bit1
+                    //
+                    // i=1dout[NUM_ADC_BITS]MSB
+                    // i=NUM_ADC_BITSdout[1]LSB
+                    dout[`NUM_ADC_BITS - i + 1] = 1;
+
+                    // 
+                    vth_cmp =
+                        vth_cmp + vdd / pow(2.0, i + 1);
+
+                end
+                else begin
+
+                    // 
+                    // bit0
+                    dout[`NUM_ADC_BITS - i + 1] = 0;
+
+                    // 
+                    vth_cmp =
+                        vth_cmp - vdd / pow(2.0, i + 1);
+
+                end
+            end
+        end
+
+
+        //========================================================
+        // 4. 
+        //========================================================
+        // dout[i]=0VOUT[i]0 V
+        // dout[i]=1VOUT[i]1 V
+        //
+        // transition()
+        // 
+        for (i = `NUM_ADC_BITS; i >= 1; i = i - 1) begin
+            V(VOUT[i]) <+ transition(dout[i]);
+        end
+
+    end
+
+endmodule

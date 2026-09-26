@@ -1,0 +1,9 @@
+// VerilogA for ADC_learn, sar-4b_se_ideal, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module sar-4b_se_ideal;
+
+
+endmodule
