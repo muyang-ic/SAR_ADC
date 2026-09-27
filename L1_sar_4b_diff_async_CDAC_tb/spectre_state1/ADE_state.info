@@ -1,0 +1,3 @@
+projectDir = '"~/simulation"
+designInfo = '("ADC_learn" "L1_sar_4b_diff_async_CDAC_tb" "schematic" "spectre")
+descriptionText = "None"
