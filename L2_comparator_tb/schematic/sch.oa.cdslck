@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      minlei
+HostName                       MINLEI8
+ProcessIdentifier              4127
+ProcessCreationTime_UTC        1790819572
+ProcessCreationTime_Readable   Thu Oct  1 09:52:52 2026 CST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /home/minlei/Desktop/my_libs/ADC_learn/L2_comparator_tb/schematic/sch.oa.cdslck
+TimeEditLocked                 Sun Oct  4 05:35:10 2026 CST
