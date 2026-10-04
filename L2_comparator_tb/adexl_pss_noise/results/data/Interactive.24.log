@@ -1,0 +1,34 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Mon Oct  5 06:13:26 2026 
+Best design point: 1
+Design specs: 
+	ADC_learn:L2_comparator_tb:1	corner	Nominal - 
+	Vnin		194u
+	Vnout		38.79m
+	Energy		684.7f
+	T_cmp		321.2p
+	T_rst		37.34p
+	FoM1		25.76
+	FoM2		8.272
+	tau		33.62p
+Design parameters: 
+	FCLK		1G
+	VTEST		1m
+	ADC_learn/L2_comparator/schematic/M0  simM		4
+	ADC_learn/L2_comparator/schematic/M1  simM		20
+	ADC_learn/L2_comparator/schematic/M2  simM		20
+	ADC_learn/L2_comparator/schematic/M9  simM		4
+	ADC_learn/L2_comparator/schematic/M7  simM		4
+	ADC_learn/L2_comparator/schematic/M10  simM		4
+	ADC_learn/L2_comparator/schematic/M8  simM		4
+	ADC_learn/L2_comparator/schematic/M3  simM		2
+	ADC_learn/L2_comparator/schematic/M4  simM		2
+	ADC_learn/L2_comparator/schematic/M5  simM		2
+	ADC_learn/L2_comparator/schematic/M6  simM		2
+
+Interactive.24
+Number of points completed: 1
+Number of simulation errors: 0
+Interactive.24 completed. 
+Current time: Mon Oct  5 06:13:28 2026 

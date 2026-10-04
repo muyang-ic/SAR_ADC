@@ -1,0 +1,18 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Sun Oct  4 12:10:10 2026 
+Best design point: 1
+Design specs: 
+	ADC_learn:L2_comparator_tb:1	corner	Nominal - 
+	delay		325.2p
+	E_compare		375.4f
+	Power		375.4u
+Design parameters: 
+	FCLK		1G
+	VTEST		100u
+
+Interactive.0
+Number of points completed: 5
+Number of simulation errors: 0
+Interactive.0 completed. 
+Current time: Sun Oct  4 12:10:19 2026 
