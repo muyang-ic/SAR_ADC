@@ -1,0 +1,16 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Thu Oct 15 11:13:57 2026 
+Best design point: 1
+Design specs: 
+	ADC_learn:L2_comparator_offset_tb:1	corner	Nominal - 
+	vos		Error	No
+Design parameters: 
+	FCLK		1G
+	cap		0
+
+Interactive.15
+Number of points completed: 1
+Number of simulation errors: 1
+Interactive.15 completed. 
+Current time: Thu Oct 15 11:13:58 2026 

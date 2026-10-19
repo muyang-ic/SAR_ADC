@@ -1,0 +1,16 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Mon Oct 19 02:18:37 2026 
+Best design point: 1
+Design specs: 
+	ADC_learn:bootstrapped_swtich_tb:1	corner	Nominal - 
+	OP("/I0/M0" "cgg")		8.914f
+Design parameters: 
+	Fs		10M
+	VDD		1.8
+
+Interactive.35
+Number of points completed: 1
+Number of simulation errors: 0
+Interactive.35 completed. 
+Current time: Mon Oct 19 02:18:39 2026 
